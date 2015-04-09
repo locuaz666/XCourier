@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:gravity="top|center|center_horizontal"
+        android:minHeight="20dp"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/linearLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Lista de Remitos"
+            android:id="@+id/lblTitulo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:minHeight="20dp"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="false"
+        android:id="@+id/lyt2"
+        android:layout_below="@+id/linearLayout2">
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBuscar"
+            android:editable="true"
+            android:elegantTextHeight="false"
+            android:enabled="true"
+            android:focusable="false"
+            android:width="150dp"
+            android:textAlignment="center" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:id="@+id/btnBuscar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:minHeight="20dp"
+        android:layout_margin="0dp"
+        android:layout_alignParentTop="false"
+        android:id="@+id/lyt3"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@+id/lyt2"
+        android:layout_above="@+id/lyt4">
+
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tblRemitos"
+        android:layout_below="@+id/lyt2"
+        android:layout_centerHorizontal="true"
+        android:numColumns="1"
+        android:nestedScrollingEnabled="true"
+        android:minHeight="200dp"
+        android:layout_margin="15dp"
+        android:layout_above="@+id/lyt3" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:minHeight="20dp"
+        android:layout_margin="0dp"
+        android:layout_alignParentTop="false"
+        android:id="@+id/lyt4"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_above="@+id/lyt5">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@mipmap/ic_user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/lblUser"
+            android:layout_gravity="bottom" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:gravity="bottom"
+        android:minHeight="20dp"
+        android:layout_margin="0dp"
+        android:layout_alignParentTop="false"
+        android:id="@+id/lyt5"
+        android:layout_alignParentBottom="true">
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgNext"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/next" />
+    </LinearLayout>
+</RelativeLayout>

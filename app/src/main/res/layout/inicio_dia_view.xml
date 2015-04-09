@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InicioDiaController">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Inicio de Día"
+        android:id="@+id/lblTitulo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnImgEncender"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="22dp"
+        android:src="@mipmap/ico_encendido"
+        android:layout_below="@+id/lblTitulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="iniDia"
+        android:adjustViewBounds="false"
+        android:background="#00ffffff"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="false" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnImgApagado"
+        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
+        android:src="@mipmap/ic_apagado"
+        android:layout_alignTop="@+id/btnImgEncender"
+        android:layout_toRightOf="@+id/btnImgEncender"
+        android:layout_toEndOf="@+id/btnImgEncender"
+        android:background="#00ffffff"
+        android:onClick="finDia"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remitos asignados"
+        android:id="@+id/lblNroRemiAsig"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/btnImgEncender"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha / Hora Inicio"
+        android:id="@+id/lblFecHorIni"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblNroRemiAsig"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha / Hora Fin"
+        android:id="@+id/lblFecHorFin"
+        android:layout_below="@+id/lblFecHorIni"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="5dp"
+        android:layout_alignRight="@+id/lblFecHorIni"
+        android:layout_alignEnd="@+id/lblFecHorIni" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remitos Off Line"
+        android:id="@+id/lblRemiOffLine"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/lblFecHorFin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgUser"
+        android:padding="5dp"
+        android:src="@mipmap/ic_user"
+        android:baselineAlignBottom="false"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblUser"
+        android:layout_alignBottom="@+id/imgUser"
+        android:layout_alignLeft="@+id/btnImgEncender"
+        android:layout_alignStart="@+id/btnImgEncender" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNroRemiAsigValue"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/lblNroRemiAsig"
+        android:minWidth="50dp"
+        android:layout_alignLeft="@+id/btnImgApagado" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblFecHorIniValue"
+        android:padding="5dp"
+        android:minWidth="50dp"
+        android:layout_above="@+id/lblFecHorFin"
+        android:layout_alignLeft="@+id/lblNroRemiAsigValue"
+        android:layout_alignStart="@+id/lblNroRemiAsigValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblFecHorFinValue"
+        android:padding="5dp"
+        android:minWidth="50dp"
+        android:layout_below="@+id/lblFecHorIniValue"
+        android:layout_alignLeft="@+id/lblFecHorIniValue"
+        android:layout_alignStart="@+id/lblFecHorIniValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblRemiOffLineValue"
+        android:padding="5dp"
+        android:minWidth="50dp"
+        android:layout_alignTop="@+id/lblRemiOffLine"
+        android:layout_alignLeft="@+id/lblFecHorFinValue"
+        android:layout_alignStart="@+id/lblFecHorFinValue" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentBottom="true"
+        android:minHeight="30dp"
+        android:id="@+id/linearLayout">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNext"
+            android:layout_alignParentBottom="true"
+            android:onClick="irViewLstEntregas"
+            android:src="@drawable/next"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right" />
+
+       </LinearLayout>
+
+
+</RelativeLayout>
