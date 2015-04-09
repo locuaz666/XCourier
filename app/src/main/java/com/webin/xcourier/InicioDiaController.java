@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -75,6 +84,29 @@ public class InicioDiaController extends ActionBarActivity {
     }
 
     public void iniDia(View view){
+
+        String urlString ="";
+        try {
+            urlString = URLEncoder.encode("http://190.102.134.78/COURIER_WCF/Xcourier.svc/rest/DayEndInit?usr=rfelix&activity=0&gpsLat=4.6778290000&gpsAlti=-74.0523374000&operation=0", "UTF-8");
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(urlString, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(JSONObject jsonObject) {
+                Toast.makeText(getApplicationContext(), "Success!", Toast.LENGTH_LONG).show();
+                Log.d("BookFinder", jsonObject.toString());
+            }
+            @Override
+            public void onFailure(int statusCode, Throwable throwable, JSONObject error) {
+                Toast.makeText(getApplicationContext(), "Error: "+ statusCode + " "+throwable.getMessage(), Toast.LENGTH_LONG).show();
+                Log.d("BookFinder", statusCode + " "+throwable.getMessage());
+            }
+        });
+
         lblNroRemiAsigValue.setText("69");
         lblFecHorIniValue.setText(new SimpleDateFormat(res.getString(R.string.format_date)).format(new Date()));
         lblUser.setText("Jonathan Malpica Núñez");
